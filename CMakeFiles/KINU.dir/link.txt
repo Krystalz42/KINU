@@ -1,2 +1,2 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libKINU.a  CMakeFiles/KINU.dir/Component.cpp.o CMakeFiles/KINU.dir/Entity.cpp.o CMakeFiles/KINU.dir/EventsManager.cpp.o CMakeFiles/KINU.dir/SystemsManager.cpp.o CMakeFiles/KINU.dir/World.cpp.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libKINU.a
+/Library/Developer/CommandLineTools/usr/bin/ar qc ../../lib/libKINU.a  CMakeFiles/KINU.dir/Component.cpp.o CMakeFiles/KINU.dir/Entity.cpp.o CMakeFiles/KINU.dir/EventsManager.cpp.o CMakeFiles/KINU.dir/SystemsManager.cpp.o CMakeFiles/KINU.dir/World.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib ../../lib/libKINU.a

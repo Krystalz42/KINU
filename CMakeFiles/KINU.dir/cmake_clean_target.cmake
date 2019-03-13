@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "libKINU.a"
+  "../../lib/libKINU.a"
 )

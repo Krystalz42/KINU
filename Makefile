@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /usr/local/Cellar/cmake/3.13.3/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /usr/local/Cellar/cmake/3.13.3/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/alexandreroulin/KINU
+CMAKE_SOURCE_DIR = /Users/alexandreroulin/work/nibbler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/alexandreroulin/KINU
+CMAKE_BINARY_DIR = /Users/alexandreroulin/work/nibbler
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/alexandreroulin/KINU
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/Cellar/cmake/3.13.3/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -69,8 +69,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/local/Cellar/cmake/3.13.3/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alexandreroulin/KINU/CMakeFiles /Users/alexandreroulin/KINU/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alexandreroulin/KINU/CMakeFiles 0
+	cd /Users/alexandreroulin/work/nibbler && $(CMAKE_COMMAND) -E cmake_progress_start /Users/alexandreroulin/work/nibbler/CMakeFiles /Users/alexandreroulin/work/nibbler/extern/KINU/CMakeFiles/progress.marks
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f CMakeFiles/Makefile2 extern/KINU/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alexandreroulin/work/nibbler/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f CMakeFiles/Makefile2 extern/KINU/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,30 +97,32 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f CMakeFiles/Makefile2 extern/KINU/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f CMakeFiles/Makefile2 extern/KINU/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/alexandreroulin/work/nibbler && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named KINU
+# Convenience name for target.
+extern/KINU/CMakeFiles/KINU.dir/rule:
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f CMakeFiles/Makefile2 extern/KINU/CMakeFiles/KINU.dir/rule
+.PHONY : extern/KINU/CMakeFiles/KINU.dir/rule
 
-# Build rule for target.
-KINU: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 KINU
+# Convenience name for target.
+KINU: extern/KINU/CMakeFiles/KINU.dir/rule
+
 .PHONY : KINU
 
 # fast build rule for target.
 KINU/fast:
-	$(MAKE) -f CMakeFiles/KINU.dir/build.make CMakeFiles/KINU.dir/build
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f extern/KINU/CMakeFiles/KINU.dir/build.make extern/KINU/CMakeFiles/KINU.dir/build
 .PHONY : KINU/fast
 
 Component.o: Component.cpp.o
@@ -129,7 +131,7 @@ Component.o: Component.cpp.o
 
 # target to build an object file
 Component.cpp.o:
-	$(MAKE) -f CMakeFiles/KINU.dir/build.make CMakeFiles/KINU.dir/Component.cpp.o
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f extern/KINU/CMakeFiles/KINU.dir/build.make extern/KINU/CMakeFiles/KINU.dir/Component.cpp.o
 .PHONY : Component.cpp.o
 
 Component.i: Component.cpp.i
@@ -138,7 +140,7 @@ Component.i: Component.cpp.i
 
 # target to preprocess a source file
 Component.cpp.i:
-	$(MAKE) -f CMakeFiles/KINU.dir/build.make CMakeFiles/KINU.dir/Component.cpp.i
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f extern/KINU/CMakeFiles/KINU.dir/build.make extern/KINU/CMakeFiles/KINU.dir/Component.cpp.i
 .PHONY : Component.cpp.i
 
 Component.s: Component.cpp.s
@@ -147,7 +149,7 @@ Component.s: Component.cpp.s
 
 # target to generate assembly for a file
 Component.cpp.s:
-	$(MAKE) -f CMakeFiles/KINU.dir/build.make CMakeFiles/KINU.dir/Component.cpp.s
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f extern/KINU/CMakeFiles/KINU.dir/build.make extern/KINU/CMakeFiles/KINU.dir/Component.cpp.s
 .PHONY : Component.cpp.s
 
 Entity.o: Entity.cpp.o
@@ -156,7 +158,7 @@ Entity.o: Entity.cpp.o
 
 # target to build an object file
 Entity.cpp.o:
-	$(MAKE) -f CMakeFiles/KINU.dir/build.make CMakeFiles/KINU.dir/Entity.cpp.o
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f extern/KINU/CMakeFiles/KINU.dir/build.make extern/KINU/CMakeFiles/KINU.dir/Entity.cpp.o
 .PHONY : Entity.cpp.o
 
 Entity.i: Entity.cpp.i
@@ -165,7 +167,7 @@ Entity.i: Entity.cpp.i
 
 # target to preprocess a source file
 Entity.cpp.i:
-	$(MAKE) -f CMakeFiles/KINU.dir/build.make CMakeFiles/KINU.dir/Entity.cpp.i
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f extern/KINU/CMakeFiles/KINU.dir/build.make extern/KINU/CMakeFiles/KINU.dir/Entity.cpp.i
 .PHONY : Entity.cpp.i
 
 Entity.s: Entity.cpp.s
@@ -174,7 +176,7 @@ Entity.s: Entity.cpp.s
 
 # target to generate assembly for a file
 Entity.cpp.s:
-	$(MAKE) -f CMakeFiles/KINU.dir/build.make CMakeFiles/KINU.dir/Entity.cpp.s
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f extern/KINU/CMakeFiles/KINU.dir/build.make extern/KINU/CMakeFiles/KINU.dir/Entity.cpp.s
 .PHONY : Entity.cpp.s
 
 EventsManager.o: EventsManager.cpp.o
@@ -183,7 +185,7 @@ EventsManager.o: EventsManager.cpp.o
 
 # target to build an object file
 EventsManager.cpp.o:
-	$(MAKE) -f CMakeFiles/KINU.dir/build.make CMakeFiles/KINU.dir/EventsManager.cpp.o
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f extern/KINU/CMakeFiles/KINU.dir/build.make extern/KINU/CMakeFiles/KINU.dir/EventsManager.cpp.o
 .PHONY : EventsManager.cpp.o
 
 EventsManager.i: EventsManager.cpp.i
@@ -192,7 +194,7 @@ EventsManager.i: EventsManager.cpp.i
 
 # target to preprocess a source file
 EventsManager.cpp.i:
-	$(MAKE) -f CMakeFiles/KINU.dir/build.make CMakeFiles/KINU.dir/EventsManager.cpp.i
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f extern/KINU/CMakeFiles/KINU.dir/build.make extern/KINU/CMakeFiles/KINU.dir/EventsManager.cpp.i
 .PHONY : EventsManager.cpp.i
 
 EventsManager.s: EventsManager.cpp.s
@@ -201,7 +203,7 @@ EventsManager.s: EventsManager.cpp.s
 
 # target to generate assembly for a file
 EventsManager.cpp.s:
-	$(MAKE) -f CMakeFiles/KINU.dir/build.make CMakeFiles/KINU.dir/EventsManager.cpp.s
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f extern/KINU/CMakeFiles/KINU.dir/build.make extern/KINU/CMakeFiles/KINU.dir/EventsManager.cpp.s
 .PHONY : EventsManager.cpp.s
 
 SystemsManager.o: SystemsManager.cpp.o
@@ -210,7 +212,7 @@ SystemsManager.o: SystemsManager.cpp.o
 
 # target to build an object file
 SystemsManager.cpp.o:
-	$(MAKE) -f CMakeFiles/KINU.dir/build.make CMakeFiles/KINU.dir/SystemsManager.cpp.o
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f extern/KINU/CMakeFiles/KINU.dir/build.make extern/KINU/CMakeFiles/KINU.dir/SystemsManager.cpp.o
 .PHONY : SystemsManager.cpp.o
 
 SystemsManager.i: SystemsManager.cpp.i
@@ -219,7 +221,7 @@ SystemsManager.i: SystemsManager.cpp.i
 
 # target to preprocess a source file
 SystemsManager.cpp.i:
-	$(MAKE) -f CMakeFiles/KINU.dir/build.make CMakeFiles/KINU.dir/SystemsManager.cpp.i
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f extern/KINU/CMakeFiles/KINU.dir/build.make extern/KINU/CMakeFiles/KINU.dir/SystemsManager.cpp.i
 .PHONY : SystemsManager.cpp.i
 
 SystemsManager.s: SystemsManager.cpp.s
@@ -228,7 +230,7 @@ SystemsManager.s: SystemsManager.cpp.s
 
 # target to generate assembly for a file
 SystemsManager.cpp.s:
-	$(MAKE) -f CMakeFiles/KINU.dir/build.make CMakeFiles/KINU.dir/SystemsManager.cpp.s
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f extern/KINU/CMakeFiles/KINU.dir/build.make extern/KINU/CMakeFiles/KINU.dir/SystemsManager.cpp.s
 .PHONY : SystemsManager.cpp.s
 
 World.o: World.cpp.o
@@ -237,7 +239,7 @@ World.o: World.cpp.o
 
 # target to build an object file
 World.cpp.o:
-	$(MAKE) -f CMakeFiles/KINU.dir/build.make CMakeFiles/KINU.dir/World.cpp.o
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f extern/KINU/CMakeFiles/KINU.dir/build.make extern/KINU/CMakeFiles/KINU.dir/World.cpp.o
 .PHONY : World.cpp.o
 
 World.i: World.cpp.i
@@ -246,7 +248,7 @@ World.i: World.cpp.i
 
 # target to preprocess a source file
 World.cpp.i:
-	$(MAKE) -f CMakeFiles/KINU.dir/build.make CMakeFiles/KINU.dir/World.cpp.i
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f extern/KINU/CMakeFiles/KINU.dir/build.make extern/KINU/CMakeFiles/KINU.dir/World.cpp.i
 .PHONY : World.cpp.i
 
 World.s: World.cpp.s
@@ -255,7 +257,7 @@ World.s: World.cpp.s
 
 # target to generate assembly for a file
 World.cpp.s:
-	$(MAKE) -f CMakeFiles/KINU.dir/build.make CMakeFiles/KINU.dir/World.cpp.s
+	cd /Users/alexandreroulin/work/nibbler && $(MAKE) -f extern/KINU/CMakeFiles/KINU.dir/build.make extern/KINU/CMakeFiles/KINU.dir/World.cpp.s
 .PHONY : World.cpp.s
 
 # Help Target
@@ -293,6 +295,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/alexandreroulin/work/nibbler && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

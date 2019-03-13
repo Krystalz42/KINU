@@ -4,8 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/KINU.dir/EventsManager.cpp.o"
   "CMakeFiles/KINU.dir/SystemsManager.cpp.o"
   "CMakeFiles/KINU.dir/World.cpp.o"
-  "libKINU.pdb"
-  "libKINU.a"
+  "../../lib/libKINU.pdb"
+  "../../lib/libKINU.a"
 )
 
 # Per-language clean rules from dependency scanning.
