@@ -2,7 +2,7 @@
 
 #include <vector>
 #include <cassert>
-#include <KINU/Config.hpp>
+#include "Config.hpp"
 
 namespace KINU {
 
